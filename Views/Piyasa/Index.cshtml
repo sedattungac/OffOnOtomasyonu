@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Piyasa-Borsa</h2>
+
+
+<div>
+    <div style="float:left;">
+        <div style="width:1100px;display:flex;justify-content:center;text-align: -webkit-center; margin: 20px 0;"><iframe title="Paratic Piyasalar" sandbox="allow-modals allow-same-origin allow-scripts allow-popups allow-pointer-lock" height="255" id="piyasa_paratic_list_extended" src="https://piyasa.paratic.com/MOBILE/widget/toolapi.php?toolName=listextended&background=kirmizi&ins=USD/TRL,EUR/TRL,GBP/TRL,XGLD&options=0,1" frameborder="0" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.75);border-radius:5px;width:100%; height:255px;"></iframe></div>
+
+    </div>
+    <div style="float:right;">
+        
+        <div style="width:100%;display:flex;justify-content:center;text-align: -webkit-center;margin: 20px 0;"><iframe title="Paratic Piyasalar" sandbox="allow-modals allow-same-origin allow-scripts allow-popups allow-pointer-lock" height="231" id="piyasa_paratic_doviz_cevirici" src="https://piyasa.paratic.com/MOBILE/widget/toolapi.php?toolName=dovizcevirici&amp;background=kirmizi" frameborder="0" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.75);border-radius:5px;width: 232px; height: 231px;"></iframe></div>
+    </div>
+</div>
+<div >
+    <iframe src="https://www.borsagundem.com/indexout.asp?renk1=000000&amp;renk2=CC0000&amp;arka=FFFFDD&amp;katid=360" width="100%"; margin: 20px 0; height="800" frameborder="0" style="border: 1px solid #1A1A1A;" vspace="0" hspace="0" marginwidth="0" marginheight="0"></iframe>
+</div>

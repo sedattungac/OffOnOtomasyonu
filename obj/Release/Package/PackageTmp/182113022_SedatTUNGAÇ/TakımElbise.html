@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+
+
+    <title>Takım Elbise</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <style>
+        *::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+        }
+
+
+        body {
+
+            background-color: whitesmoke;
+        }
+
+        .navbar {
+
+            background-color: rgba(192, 192, 192, 0.9);
+
+        }
+
+        .resim {
+            width: 100%;
+
+
+
+
+        }
+
+        .p {
+
+            text-align: justify;
+
+        }
+
+        /* flip card */
+        .flip-card {
+            background-color: transparent;
+            width: 350px;
+            height: 650px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: rgba(192, 192, 192, 0.3);
+            color: white;
+        }
+
+        .flip-card-back {
+            background-color: rgba(192, 192, 192, 0.3);
+            color: white;
+            transform: rotateY(180deg);
+            overflow-y: scroll;
+
+        }
+
+        .flip-card-back>p,
+        .flip-card-back>h5 {
+            text-align: center;
+        }
+
+        .icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+
+    </style>
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark sticky-top">
+
+        <a class="navbar-brand" href="#"><img src="img/OFF-ON%20ORIGINAL_free-file%20(1).png" style="width: 150px;"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenav">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsenav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="anasayfa.html"><svg class="bi bi-house-fill" width="1em"
+                            height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 3.293l6 6V13.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z"
+                                clip-rule="evenodd" />
+                            <path fill-rule="evenodd"
+                                d="M7.293 1.5a1 1 0 011.414 0l6.647 6.646a.5.5 0 01-.708.708L8 2.207 1.354 8.854a.5.5 0 11-.708-.708L7.293 1.5z"
+                                clip-rule="evenodd" />
+                        </svg>Anasayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="hakkinda.html"><svg class="bi bi-card-heading"
+                            width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z"
+                                clip-rule="evenodd" />
+                            <path fill-rule="evenodd"
+                                d="M3 8.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zm0 2a.5.5 0 01.5-.5h6a.5.5 0 010 1h-6a.5.5 0 01-.5-.5z"
+                                clip-rule="evenodd" />
+                            <path d="M3 5.5a.5.5 0 01.5-.5h9a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-9a.5.5 0 01-.5-.5v-1z" />
+                        </svg>Hakkında</a></li>
+                <li class="nav-item"><a class="nav-link" href="TakımElbise.html"><svg class="bi bi-gem" width="1em"
+                            height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3.1.7a.5.5 0 01.4-.2h9a.5.5 0 01.4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 01-.8 0L.1 5.3a.5.5 0 010-.6l3-4zm11.386 3.785l-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004l.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495l5.062-.005L8 13.366 5.47 5.495zm-1.371-.999l-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l2.92-.003 2.193 6.82L1.5 5.5zm7.889 6.817l2.194-6.828 2.929-.003-5.123 6.831z"
+                                clip-rule="evenodd" />
+                        </svg>Takım Elbise </a></li>
+                <li class="nav-item"><a class="nav-link" href="%C3%BCr%C3%BCnler.html"><svg class="bi bi-images"
+                            width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M12.002 4h-10a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V5a1 1 0 00-1-1zm-10-1a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2h-10z"
+                                clip-rule="evenodd" />
+                            <path
+                                d="M10.648 8.646a.5.5 0 01.577-.093l1.777 1.947V14h-12v-1l2.646-2.354a.5.5 0 01.63-.062l2.66 1.773 3.71-3.71z" />
+                            <path fill-rule="evenodd"
+                                d="M4.502 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM4 2h10a1 1 0 011 1v8a1 1 0 01-1 1v1a2 2 0 002-2V3a2 2 0 00-2-2H4a2 2 0 00-2 2h1a1 1 0 011-1z"
+                                clip-rule="evenodd" />
+                        </svg>Montlar</a> </li>
+                <li class="nav-item"><a class="nav-link" href="ileti%C5%9Fim.html"><svg class="bi bi-phone" width="1em"
+                            height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M11 1H5a1 1 0 00-1 1v12a1 1 0 001 1h6a1 1 0 001-1V2a1 1 0 00-1-1zM5 0a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V2a2 2 0 00-2-2H5z"
+                                clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M8 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                        </svg>İletişim</a></li>
+            </ul>
+        </div>
+
+        <form class="form-inline" action="/action_page.php">
+
+            <input class="form-control mr-sm-2" type="text" placeholder="Arama...">
+            <button class="btn btn-danger" type="submit"><svg class="bi bi-search" width="1em" height="1em"
+                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                        clip-rule="evenodd" />
+                </svg> Ara</button>
+        </form>
+
+    </nav><br>
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+        <a href="#" class="google"><i class="fa fa-google"></i></a> 
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+      </div>
+
+    <div class="container">
+
+
+
+
+        <div class="row">
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım1.jpg" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım2.jfif" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"  style="background-color:black;">
+                            <img src="img/2takım3.jfif" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <br>
+        <br>
+
+
+
+        <div class="row">
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım4.webp"Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                             <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım5.webp" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım6.webp" alt=" Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <br>
+
+
+        <div class="row">
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner" >
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım7.jfif" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım8.jfif"Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-color:black;">
+                            <img src="img/2takım9.jfif" alt="Card image cap" style="width: 100%;">
+                            <br>
+                            <br>
+                            <br>
+                            <h3> Erkek Spor Takım</h3>
+                            <h5>Açıklama için üzerine dokun.</h5>
+                        </div>
+                        <div class="flip-card-back" style="background-color:rgb(45, 49, 49);">
+                            <br><br><br><br>
+                            <p>
+                                SİYAH Slim Fit Takım Elbise - 0K1K7ET231F46
+
+                            </p> <br><br>
+                            <p>
+                                ÜRÜN ÖZELLİKLERİ
+                                E-TİCARET EXCLUSIVE ÜRÜN
+
+                            </p> <br><br>
+                            <p>
+                                Floransa Drop: Slim fit, dar kalıp (0 drop)
+                                Roma Drop: Regular fit, klasik kalıp (6-7 drop)
+                                Bari Drop: Relax fit, rahat ve geniş kalıp (4 drop)
+                                Süper Slim Fit Drop: Ekstra dar kalıp
+                                8 Drop: Uzun ve dar kalıp
+
+
+
+
+                            </p> <br>
+                            <p>
+                                Renk: SİYAH
+
+                                Ürün Kodu: 0K1K7ET231F46
+
+                                Fiyat Değişiklik: 2020-03-29T00:00:00Z
+
+                                Manken Ölçüleri:50/M Boy:1.88 cm
+                                Göğüs:101 cm Bel:80 cm Basen:98 cm
+
+
+                                %74 POLYESTER %24 VİSKOZ %2 ELASTAN
+
+                            </p>
+                            <h5>399.00 TL</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <br>
+
+
+
+
+
+
+
+    </div>
+    <br><br>
+    <footer>
+        <div class="jumbotron jumbotron-fluid text-center" style="margin: 0%;" id="footer-jumbotron">
+            <div class="container-fluid text-center">
+                <div class="row" style="color: black;" >
+                    <div class="col-md-6 col-sm-12">
+                        <p>&copy; Copyright 2020 SEDAT TUNGAÇ</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p>Sedat TUNGAÇ</p>
+                        <p>182113022</p>
+                        <p>Düzce Üniversitesi Teknoloji Fakültesi</p>
+                        <p>Bilgisayar Mühendisliği N.Ö</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+           
+           
+           
+    </footer>   
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+﻿<div id="id01" class="modal">
+
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="~/182113022_SedatTUNGAÇ/img/kayit1.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label><b>Ad </b></label>
+            <input type="text" placeholder="Ad Giriniz" name="CariAd" required="" />
+
+            <label><b>Soyad</b></label>
+            <input type="text" placeholder="Soyad Giriniz" name="CariSoyad" required="" />
+
+            <label><b>Mail</b></label>
+            <input type="text" placeholder="Mail Giriniz" name="CariMail" required="" />
+
+            <label><b>Adres</b></label>
+            <input type="text" placeholder="Mail Giriniz" name="CariAdres" required="" />
+
+            <label><b>Şehir</b></label>
+            <input type="text" placeholder="Mail Giriniz" name="CariSehir" required="" />
+
+            <label><b>Telefon</b></label>
+            <input type="text" placeholder="Telefon Giriniz" name="CariTel" required="" />
+
+
+            <label><b>Şifre</b></label>
+            <input type="password" placeholder="Şifrenizi Giriniz" name="CariSifre" required="" />
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> <i style="color:black;">Kayıt Ol'a Basarak <a href="#">Üyelik Koşulları</a>'nı ve <a href="#">Kişisel Verilern Korunması Metni</a>'ni Kabul Ediyorum.</i>
+            </label>
+
+            <button type="submit">Kayıt Ol</button>
+            @*<label>
+                    <input type="checkbox" checked="checked" name="remember"> Beni Hatırla
+                </label>*@
+
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <img src="~/Web/images/OFF-ON ORIGINAL_free-file (1).png" style="width: 175px; margin-left:830px;">
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

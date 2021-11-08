@@ -1,0 +1,44 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Departman Detay Sayfası</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"><b>@ViewBag.d Departmanı</b>  </li>
+</ol>
+<table class="table table-hover">
+
+    <tr>
+
+        @*<th>Personel ID</th>*@
+        <th>Personel Ad Soyad</th>
+        <th>Personel Görsel</th>
+        <th>Satışlar</th>
+
+
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            @*<td>@x.Personelid</td>*@
+            <td>@x.PersonelAd @x.PersonelSoyad</td>
+
+            <td>
+                <a href="@x.PersonelGorsel"> <img src="@x.PersonelGorsel" style="width:100px; height:100px;" /></a>
+            </td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@x.Personelid" class="btn btn-default" style="background-color:orangered; color:white; ">Satışlar  </a></td>
+
+        </tr>
+
+
+    }
+
+</table>

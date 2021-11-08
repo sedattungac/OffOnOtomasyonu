@@ -1,0 +1,64 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<FaturaKalem>
+@{
+    ViewBag.Title = "FaturaDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div>
+    <div style="float:left">
+
+        <h2>Fatura Kalemleri Sayfası</h2>
+
+    </div>
+    <div style="float:right">
+        <p>
+            <a href="/Fatura/YeniKalem/" class="btn btn-default;" align="right" style="background-color:salmon; color:white;  margin-right:30px">Yeni Kalem Ekle</a>
+
+
+        </p>
+
+    </div>
+    <br /><br /><br />
+</div>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"><b style="color:black">Teslim Alan  :</b> &nbsp; @ViewBag.d  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b style="color:black">Teslim Eden  :</b> &nbsp; @ViewBag.dpers  </li>
+</ol>
+
+
+
+<table class="table table-hover">
+
+    <tr>
+
+        <th> ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+        <th>Güncelle</th>
+
+
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.FaturaKalemid</td>
+            <td>@x.Aciklama</td>
+            <td>@x.Miktar</td>
+            <td>@x.BirimFiyat</td>
+            <td>@x.Tutar</td>
+            <td><a href="/Fatura/FaturaDetay/@x.FaturaKalemid" class="btn btn-success" style="color:white">Güncelle</a></td>
+
+
+        </tr>
+
+
+    }
+
+</table>
+

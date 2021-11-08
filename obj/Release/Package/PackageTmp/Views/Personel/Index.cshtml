@@ -1,0 +1,82 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div>
+    <p>
+        <div style="float:left">
+
+            <h2>Personel Detay Listesi</h2>
+        </div>
+        <div style="float:right">
+            <a href="/Personel/PersonelEkle" class="btn btn-info">Personel Ekle</a>
+        </div>
+    </p>
+</div>
+
+<br />
+<br />
+<table class="table table-bordered" style="margin-top:20px">
+
+
+    <tr>
+        @*<th>ID</th>*@
+        <th>Personel Görsel</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+
+        <th>P.Departman</th>
+        <th>P.Adres</th>
+        <th>P.Mail</th>
+        <th>P.Tel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+
+        @* !!!!!!!!SİL KISMI EKLENECEK!!!!!!!! *@
+    </tr>
+
+    @foreach (var k in Model)
+    {
+
+
+
+        <tr>
+
+            @*<td>@k.Personelid</td>*@
+            <td>
+                <a href="@k.PersonelGorsel">   <img src="@k.PersonelGorsel" style="width:100px; height:100px;" /> </a>
+
+
+            </td>
+            <td>@k.PersonelAd</td>
+            <td>@k.PersonelSoyad</td>
+
+            <td>@k.Departman.DepartmanAd</td>
+            <td>@k.PersonelAdres</td>
+            <td>@k.PersonelMail</td>
+            <td>@k.PersonelTel</td>
+            <td> <a href="/Personel/PersonelSil/@k.Personelid" class="btn btn-danger" style="color:white;">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@k.Personelid" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@k.Personelid" class="btn btn-warning" style="color:white">Satış Detayları</a></td>
+
+
+
+
+
+
+
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+
+

@@ -1,0 +1,83 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+
+
+<br />
+<div>
+    <div style="float:left">
+
+        <h2>Kargo Takip</h2>
+
+    </div>
+
+
+
+    <div style="float:right; margin-left:100px;">
+
+        <p>
+            @using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+            {
+                <a align="right" style="margin-left:350px;">
+                    <b>
+                        Kargo Takip Numarası: @Html.TextBox("p")
+                        <input style="background-color:darkblue; color:white;" type="submit" value="Ara" />
+                    </b>
+                </a>
+            }
+            <br />
+
+
+        </p>
+
+    </div>
+</div>
+<br />
+<br />
+<table class="table table-bordered" style="margin-top:20px">
+
+
+    <tr>
+        @*<th>ID</th>*@
+        @*<th>Açıklama</th>
+            <th>Takip Kodu</th>*@
+        <th>Personel</th>
+        <th>Alıcı</th>
+
+        <th>Kargo Takip Kodu</th>
+
+        <th>Tarih</th>
+
+        <th>Detaylar</th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+
+
+
+        <tr>
+
+
+            <td>@k.Personel</td>
+
+            <td>@k.Alici</td>
+
+            <td>@k.TakipKodu</td>
+
+            <td>@k.Tarih</td>
+
+
+
+            <td><a href="/CariPanel/CariKargoTakip/@k.TakipKodu" class="btn btn-danger">Detaylar</a></td>
+
+        </tr>
+    }
+
+</table>

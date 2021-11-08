@@ -1,0 +1,66 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@{
+    ViewBag.Title = "CariGeriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div>
+    <div style="float:left">
+
+        <h2>Kaldırılan Cariler Listesi</h2>
+
+    </div>
+    <div style="float:right">
+        <p>
+            <a href="/Cari/CariGuncelListe/" class="btn btn-default" align="right" style=" background-color: crimson; margin-right: 30px; color: white;">Güncel Cariler</a>
+            <a href="/Cari/Index/" class="btn btn-default" align="right" style=" background-color: darkslategrey; margin-right: 30px; color: white;">Tüm Cariler</a>
+            <a href="/Cari/CariGeriGetirListesi/" class="btn btn-default" align="right" style="margin-right:30px; background-color:burlywood; color:white">Yazdır</a>
+        </p>
+
+    </div>
+</div>
+
+
+<br />
+<table class="table table-striped">
+
+    <tr>
+
+        <th>Cari ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Telefon</th>
+        <th>Sil</th>
+        <th>Geri Al</th>
+
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Cariid</td>
+            <td>@x.CariAd</td>
+            <td>@x.CariSoyad</td>
+            <td>@x.CariAdres</td>
+            <td>@x.CariSehir</td>
+            <td>@x.CariMail</td>
+            <td>@x.CariTel</td>
+            <td><a href="/Cari/CariSil/@x.Cariid" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Cari/CariGeriAl/@x.Cariid" class="btn btn-warning" style="color:white;">Geri Al</a></td>
+
+
+
+
+
+        </tr>
+
+
+
+    }
+
+</table>
+

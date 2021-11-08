@@ -1,0 +1,35 @@
+﻿@model OffOnOtomasyonu.Models.Siniflar.KargoDetay
+
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kargo Bilgisi</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.TakipKodu)
+    <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TakipKodu" />
+    @*@Html.TextBoxFor(x => x.TakipKodu, new { @class = "form-control" })*@
+    <br />
+    @Html.LabelFor(x => x.Personel)
+    @*@Html.DropDownListFor(x => x.Personel, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })*@
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Alici)
+
+    @Html.TextBoxFor(x => x.Alici, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    <input class="form-control" type="date" name="Tarih" />
+    @*@Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })*@
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Ekle</button>
+
+</form>
+

@@ -1,0 +1,290 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="SHORTCUT ICON" href="~/Web/images/off.ico">
+    <title>OFF-ON ORIGINAL</title>
+    <link href="~/Web/startbootstrap-sb-admin-gh-pages/dist/css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="/Kategori/Index/"><img src="~/Web/images/OFF-ON ORIGINAL_free-file (1).png" style="width: 175px;"></a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Aranacak Kelimeyi ..." aria-label="Search" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <a style="color:red;" class="nav-link" href="/CariPanel/LogOut/">
+                <div class="sb-nav-link-icon"><i style="color:red;" class="fas fa-sign-out-alt "></i>  Çıkış</div>
+
+            </a>
+
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu" style="width:250px;">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">MENÜ</div>
+                        <a class="nav-link" href="/Kategori/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas  fa-list "></i></div>
+                            Kategoriler
+                        </a>
+                        @*@if (User.IsInRole("A"))
+        {
+            <a class="nav-link" href="/Kategori/Index/">
+                <div class="sb-nav-link-icon"><i class="fas  fa-list "></i></div>
+                Kategoriler
+            </a>
+        }*@
+
+                        @*<a class="nav-link" href="/Marka/Index/">
+            <div class="sb-nav-link-icon"><i class="fas fa-tags "></i></div>
+            Markalar
+        </a>*@
+                        <a class="nav-link" href="/Urun/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tags "></i></div>
+                            Ürünler
+                        </a>
+                        <a class="nav-link" href="/Departman/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas  fa-building"></i></div>
+                            Departmanlar
+                        </a>
+                        @*@if (User.IsInRole("A"))
+        {
+            <a class="nav-link" href="/Departman/Index/">
+                <div class="sb-nav-link-icon"><i class="fas  fa-building"></i></div>
+                Departmanlar
+            </a>
+        }*@
+
+                        <a class="nav-link" href="/Cari/CariListe/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users "></i></div>
+                            Cariler
+                        </a>
+                        @*<a class="nav-link" href="/Cari/Index/">
+            <div class="sb-nav-link-icon"><i class="fas fa-users "></i></div>
+            Cariler Detay
+        </a>*@
+                        @*@if (User.IsInRole("A"))
+        {
+            <a class="nav-link" href="/Cari/Index/">
+                <div class="sb-nav-link-icon"><i class="fas fa-users "></i></div>
+                Cariler Detay
+            </a>
+        }*@
+
+                        <a class="nav-link" href="/Personel/PersonelListe/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-street-view"></i></div>
+                            Personel
+                        </a>
+                        @*<a class="nav-link" href="/Personel/Index/">
+            <div class="sb-nav-link-icon"><i class="fas fa-street-view"></i></div>
+            Personel Detay
+        </a>*@
+                        @*@if (User.IsInRole("A"))
+        {
+            <a class="nav-link" href="/Personel/Index/">
+                <div class="sb-nav-link-icon"><i class="fas fa-street-view"></i></div>
+                Personel Detay
+            </a>
+        }*@
+
+                        <div class="sb-sidenav-menu-heading">Rapor & fatura</div>
+                        <a class="nav-link" href="/Satis/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-bag" style="color:dimgray"></i></div>
+                            Satışlar
+                        </a><a class="nav-link" href="/Fatura/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas  fa-columns"></i></div>
+                            Faturalar
+                        </a>
+                        @*<a class="nav-link" href="/Fatura/Dinamik/">
+            <div class="sb-nav-link-icon"><i class="fas  fa-list-alt"></i></div>
+            Dinamik Faturalar
+        </a>*@
+                        <a class="nav-link" href="/Gider/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas  fa-frown"></i></div>
+                            Giderler
+                        </a>
+                        @*@if (User.IsInRole("A"))
+        {
+            <a class="nav-link" href="/Gider/Index/">
+                <div class="sb-nav-link-icon"><i class="fas  fa-frown"></i></div>
+                Giderler
+            </a>
+        }*@
+                        <div class="sb-sidenav-menu-heading">İletişim</div>
+                        <a class="nav-link" href="/Mesaj/GelenMesajlar/">
+                            <div class="sb-nav-link-icon"><i class="fas  fa-comment"></i></div>
+                            Mesajlar
+                        </a>
+                        <a class="nav-link" href="/Duyuru/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas   fa-bullhorn"></i></div>
+                            Duyurular
+                        </a>
+
+                        @*<a class="nav-link" href="/Urun/UrunListesi/">
+            <div class="sb-nav-link-icon"><i class="fas    fa-print"></i></div>
+            PDF ~ EXCEL
+        </a>*@
+                        @*<a class="nav-link" href="/Alertler/Index/">
+            <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
+            Alertler
+        </a>*@
+                        <div class="sb-sidenav-menu-heading">Analizler</div>
+
+                        <a class="nav-link" href="/Istatistik/Index/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16 " style="margin-right:3px">
+                                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
+                            </svg>
+                            İstatistikler
+
+
+                        </a>
+                        <a class="nav-link collapsed" href="/Istatistik/KolayTablolar/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks "></i></div>
+                            Kolay Tablolar
+
+                        </a>
+                        <a class="nav-link collapsed" href="/Piyasa/Index/">
+                            <div class="sb-nav-link-icon"><i class="fas fa-dollar-sign "></i></div>
+                            Borsa
+
+                        </a>
+                        @*@if (User.IsInRole("A"))
+        {
+
+            <a class="nav-link collapsed" href="/Istatistik/KolayTablolar/">
+                <div class="sb-nav-link-icon"><i class="fas fa-tasks "></i></div>
+                Hızlı Bakış
+            }
+            </a>*@
+
+
+
+
+                        @*<a class="nav-link" href="/UrunDetay/Index/">
+            <div class="sb-nav-link-icon"><i class="far fa-file  "></i></div>
+            Ürün Detay
+        </a>*@
+                        <div class="sb-sidenav-menu-heading">Extra</div>
+                        <a class="nav-link" href="/Galeri/Index/">
+                            <div class="sb-nav-link-icon"><i class="far fa-images  "></i></div>
+                            Galeri
+                        </a>
+
+                        <a class="nav-link" href="/Kargo/Index/">
+                            <div class="sb-nav-link-"><i class="fas fa-truck"></i> </div>&nbsp;
+                            Kargolar
+                            <span class="right badge badge-danger">Bakımda</span>
+                        </a>
+                        <a class="nav-link" href="/QR/Index/">
+                            <div class="sb-nav-link-"><i class="fas fa-qrcode"></i> </div>&nbsp;
+                            QR Kod
+                        </a>
+                        <a style="color:red;" class="nav-link" href="/CariPanel/LogOut/">
+                            <div class="sb-nav-link-icon"><i style="color:red;" class="fas fa-sign-out-alt fa-lg "></i></div>
+                            Çıkış
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">
+                        <p>
+                            <font size="3" face="angilla tattoo">
+                                En iyisi için:
+                            </font>
+                        </p>
+                    </div>
+                    <p>
+                        <font size="4" face="angilla tattoo">
+                            OFF-ON ORIGINAL
+                        </font>
+                    </p>
+
+
+
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </main>
+
+
+            <!-- Footer -->
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                        <div>
+                            <a href="#">Gizlilik Politikası</a>
+                            &middot;
+                            <a href="#">Şartlar &amp; Koşullar</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/Web/startbootstrap-sb-admin-gh-pages/dist/js/scripts.js"></script>
+    <!-- Footer -->
+
+
+</body>
+
+
+
+
+
+</html>

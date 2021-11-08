@@ -1,0 +1,46 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ int sira = 1;}
+<br />
+
+<h4>Kargo Durumu</h4>
+
+<br />
+
+<table id="tbl1" class="table table-striped" style="margin-top:20px">
+
+    <tr>
+
+        <th>#</th>
+
+        <th>Açıklama</th>
+
+        <th>Zaman</th>
+
+    </tr>
+
+    @foreach (var cr in Model)
+
+    {
+
+        <tr>
+
+            <td>#@sira</td>
+
+            <td>@cr.Aciklama</td>
+
+            <td>@cr.TarihZaman.ToString("dd/MM/yyyy HH:mm")</td>
+
+        </tr>
+
+        sira += 1;
+
+    }
+
+
+</table>

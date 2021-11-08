@@ -1,0 +1,91 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div>
+    <div style="float:left">
+
+        <h2>Tüm Ürünler</h2>
+
+    </div>
+
+
+
+    <div style="float:right; margin-left:100px;">
+
+        <p>
+            <a href="/Urun/UrunGeriGetir/" class="btn btn-default" align="right" style="        background-color:dimgray; margin-right: 30px; color:white;"> Silinen Ürünler</a>
+            <a href="/Urun/GuncelUrunListesi/" class="btn btn-default" align="right" style="        background-color:#C000FE; margin-right: 30px; color:white;"> Güncel Ürünler</a>
+            <a href="/Urun/TumUrunListesi/" class="btn btn-default" align="right" style="margin-right:30px; background-color:burlywood; color:white"> Yazdır</a>
+            <a href="/Urun/YeniUrun/" class="btn btn-primary" align="right" > Yeni Ürün Ekle</a>
+            @using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+            {
+                <a align="right" style="margin-left:200px;">
+                    <b>
+                        Ürün Adı: @Html.TextBox("p")
+                        <input style="background-color:darkblue; color:white;" type="submit" value="Ara" />
+                    </b>
+                </a>
+            }
+        </p>
+
+    </div>
+</div>
+
+
+<br />
+<br />
+<br />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        @*<th>ID</th>*@
+        <th>Ürün Adı</th>
+        <th>Ürün Görsel</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+
+
+
+        @*<th>Kaldır</th>*@
+        <th>Güncelle</th>
+        <th>Satış Yap</th>
+
+    </tr>
+
+    @foreach (var u in Model)
+    {
+        <tr>
+
+            @*<td>@u.Urunid</td>*@
+            <td>@u.UrunAd</td>
+            <td>
+                <a href="@u.UrunGorsel"> <img src="@u.UrunGorsel" style="width:100px; height:100px;" /></a>
+            </td>
+            <td>@u.Marka</td>
+            <td>@u.Stok Adet</td>
+            <td>@u.AlisFiyat ₺</td>
+            <td>@u.SatisFiyat ₺</td>
+            <td>@u.Kategori.KategoriAd</td>
+
+
+            @*<td> <a href="/Urun/UrunKaldir/@u.Urunid" class="btn btn-danger" style="color:white;"><img src="~/Image/cop.png" style="width:22px;" /> Kaldır</a></td>*@
+            <td> <a href="/Urun/UrunGetir/@u.Urunid" class="btn btn-success">  Güncelle</a></td>
+            <td> <a href="/Urun/SatisYap/@u.Urunid" class="btn btn-default" style="background-color:#ff6a00; color:white;"> Satış Yap</a></td>
+
+
+        </tr>
+
+
+    }
+
+</table>
+
+

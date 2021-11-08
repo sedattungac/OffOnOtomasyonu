@@ -1,0 +1,47 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "MusteriSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Geçmişi Listesi</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active" style="color:black; font-size:20px; font-style:"> <strong style="color:dimgray">Cari Ad  : </strong><b> @ViewBag.cari  </b>  &emsp; <strong style="color:dimgray">Cari Tel  : </strong>  <b>  @ViewBag.caris </b>  &emsp; <strong style="color:dimgray">Cari Mail  : </strong> <b> @ViewBag.carisu  </b> &emsp; <strong style="color:dimgray">Cari Şehir  : </strong> <b> @ViewBag.carisy </b>  </li>
+
+</ol>
+<table class="table table-condensed">
+
+    <tr>
+
+        <th>Satış ID</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.Satisid</td>
+            <td>@x.Urun.UrunAd</td>
+            <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
+
+            <td>@x.Fiyat</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td> @(((DateTime)x.Tarih).ToString("dd MMMMMMM yyyy"))</td>
+            <td><a href="#" class="btn btn-default" style="background-color:darkslateblue; color:white">Yazdır</a></td>
+
+
+        </tr>
+    }
+</table>

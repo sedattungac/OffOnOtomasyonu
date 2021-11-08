@@ -1,0 +1,81 @@
+﻿@using OffOnOtomasyonu.Models.Siniflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div>
+    <div style="float:left">
+
+        <h2>Güncel Cariler Detay Listesi</h2>
+
+    </div>
+    <div style="float:right">
+        <p>
+            <a href="/Cari/CariGeriGetir/" class="btn btn-default" align="right" style="        background-color:dimgray; margin-right: 30px; color:white;">Silinen Cariler</a>
+            <a href="/Cari/Index/" class="btn btn-default" align="right" style="        background-color:darkslategrey; margin-right: 30px; color:white;">Tüm Cariler</a>
+            <a href="/Cari/CariGuncelListesi/" class="btn btn-default" align="right" style="margin-right:30px; background-color:burlywood; color:white">Yazdır</a>
+
+
+            <a href="/Cari/YeniCari/" class="btn btn-primary" align="right" style="margin-right:30px">Yeni Cari Ekle</a>
+            @using (Html.BeginForm("Index", "Cari", FormMethod.Get))
+            {
+                <a align="right" style="margin-left:95px;">
+                    <b>
+                        Cari Adı: @Html.TextBox("p")
+                        <input style="background-color:darkblue; color:white;" type="submit" value="Ara" />
+
+
+                    </b>
+                </a>
+            }
+        </p>
+
+    </div>
+</div>
+
+
+<br />
+<table class="table table-striped">
+
+    <tr>
+
+        <th>Cari ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Telefon</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Cariid</td>
+            <td>@x.CariAd</td>
+            <td>@x.CariSoyad</td>
+            <td>@x.CariAdres</td>
+            <td>@x.CariSehir</td>
+            <td>@x.CariMail</td>
+            <td>@x.CariTel</td>
+            <td><a href="/Cari/CariKaldir/@x.Cariid" class="btn btn-warning" style="color:white">Kaldır</a></td>
+            <td><a href="/Cari/CariGetir/@x.Cariid" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Cari/MusteriSatis/@x.Cariid" class="btn btn-default" style="background-color:palevioletred; color:white">Satış Geçmişi</a></td>
+
+
+
+
+        </tr>
+
+
+
+    }
+
+</table>
